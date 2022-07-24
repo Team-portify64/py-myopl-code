@@ -97,7 +97,7 @@ class Position:
 # TOKENS
 #######################################
 
-TT_INT				= 'INT'
+TT_INT				= 'INT;'
 TT_FLOAT    	= 'FLOAT'
 TT_STRING			= 'STRING'
 TT_IDENTIFIER	= 'IDENTIFIER'
@@ -124,23 +124,23 @@ TT_NEWLINE		= 'NEWLINE'
 TT_EOF				= 'EOF'
 
 KEYWORDS = [
-  'VAR',
-  'AND',
-  'OR',
-  'NOT',
-  'IF',
-  'ELIF',
-  'ELSE',
-  'FOR',
-  'TO',
-  'STEP',
-  'WHILE',
-  'FUN',
-  'THEN',
-  'END',
-  'RETURN',
-  'CONTINUE',
-  'BREAK',
+  'var',
+  'and',
+  'or',
+  'not',
+  'if',
+  'elif',
+  'else',
+  'for',
+  'to',
+  'step',
+  'while',
+  'function',
+  'then',
+  'end',
+  'return',
+  'continue',
+  'break',
 ]
 
 class Token:
@@ -2160,25 +2160,25 @@ class Interpreter:
 #######################################
 
 global_symbol_table = SymbolTable()
-global_symbol_table.set("NULL", Number.null)
-global_symbol_table.set("FALSE", Number.false)
-global_symbol_table.set("TRUE", Number.true)
-global_symbol_table.set("MATH_PI", Number.math_PI)
-global_symbol_table.set("PRINT", BuiltInFunction.print)
-global_symbol_table.set("PRINT_RET", BuiltInFunction.print_ret)
-global_symbol_table.set("INPUT", BuiltInFunction.input)
-global_symbol_table.set("INPUT_INT", BuiltInFunction.input_int)
-global_symbol_table.set("CLEAR", BuiltInFunction.clear)
-global_symbol_table.set("CLS", BuiltInFunction.clear)
-global_symbol_table.set("IS_NUM", BuiltInFunction.is_number)
-global_symbol_table.set("IS_STR", BuiltInFunction.is_string)
-global_symbol_table.set("IS_LIST", BuiltInFunction.is_list)
-global_symbol_table.set("IS_FUN", BuiltInFunction.is_function)
-global_symbol_table.set("APPEND", BuiltInFunction.append)
-global_symbol_table.set("POP", BuiltInFunction.pop)
-global_symbol_table.set("EXTEND", BuiltInFunction.extend)
-global_symbol_table.set("LEN", BuiltInFunction.len)
-global_symbol_table.set("RUN", BuiltInFunction.run)
+global_symbol_table.set("null", Number.null)
+global_symbol_table.set("false", Number.false)
+global_symbol_table.set("true", Number.true)
+global_symbol_table.set("math", Number.math_PI)
+global_symbol_table.set("printf", BuiltInFunction.print)
+global_symbol_table.set("printf.ret", BuiltInFunction.print_ret)
+global_symbol_table.set("input", BuiltInFunction.input)
+global_symbol_table.set("input.ret", BuiltInFunction.input_int)
+global_symbol_table.set("clear", BuiltInFunction.clear)
+global_symbol_table.set("cls", BuiltInFunction.clear)
+global_symbol_table.set("is.num", BuiltInFunction.is_number)
+global_symbol_table.set("is.str", BuiltInFunction.is_string)
+global_symbol_table.set("is.list", BuiltInFunction.is_list)
+global_symbol_table.set("is.fun", BuiltInFunction.is_function)
+global_symbol_table.set("append", BuiltInFunction.append)
+global_symbol_table.set("pop", BuiltInFunction.pop)
+global_symbol_table.set("extend", BuiltInFunction.extend)
+global_symbol_table.set("len", BuiltInFunction.len)
+global_symbol_table.set("run", BuiltInFunction.run)
 
 def run(fn, text):
   # Generate tokens
